@@ -1,0 +1,181 @@
+<!doctype html>
+<!-- 收据模板v0.3 by sym -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>科目三模拟</title>
+
+    <style type="text/css">
+        /* div-css */
+        /* 总div */
+        div.v1 {
+            width: 10cm;
+            height: 9.5cm;
+            border: 1px auto;
+            /*|solid*/
+        }
+
+        /* 收据表格div */
+        div.v2 {
+            width: 9.5cm;
+            height: 10cm;
+            /* border: 1px solid; */
+            /* border-color: blue; */
+            text-align: center;
+            align-self: center;
+            float: left;
+            margin: auto;
+        }
+
+        /* 右侧div */
+        div.v3 {
+            width: 0.5cm;
+            height: 10cm;
+            writing-mode: vertical-rl;
+            text-align: center;
+            float: right;
+        }
+
+
+        /* p-css */
+        p.p1 {
+            text-align: center;
+            margin: 8px;
+        }
+
+        p.p2 {
+            text-align: left;
+            line-height: 0px;
+        }
+
+        p.p3 {
+            border: 0 solid;
+            line-height: 5px;
+        }
+
+        /* td-css */
+        td {
+            border: 1px solid;
+            margin: auto;
+            padding: fixed;
+        }
+
+        td.d1 {
+            border: 0 solid;
+        }
+
+        /* table-css */
+        table.e1 {
+            height: 7.5cm;
+            width: 9.5cm;
+            margin: fixed;
+            border: 2px solid;
+            border-collapse: collapse;
+            table-layout: fixed；
+        }
+
+        table.e2 {
+            border: 0;
+        }
+
+        table.e3 {
+            margin: 0;
+            border: 0;
+            border-collapse: collapse;
+        }
+
+        /* body-css */
+        body {
+            margin: fixed;
+            width: 10cm;
+            height: 9.5cm;
+        }
+    </style>
+
+    <script language=javascript>
+        function doPrint() {
+            bdhtml = window.document.body.innerHTML;
+            sprnstr = "<!--startprint-->";
+            eprnstr = "<!--endprint-->";
+            prnhtml = bdhtml.substr(bdhtml.indexOf(sprnstr) + 17);
+            prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));
+            window.document.body.innerHTML = prnhtml;
+            window.print();
+            window.document.body.innerHTML = bdhtml;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <!--startprint-->
+    <div class="v1">
+        <!-- 总div -->
+
+        <div class="v2">
+            <!-- 收据表格 -->
+            <p class="p1"><b>包头市银河驾驶员培训学校</b></n></br><b>科目三模拟费收费收据</b></p>
+
+            <div>
+
+                <div style="float:left;">
+                    <p class="p2"><span id="cg">获取当前时间中</span></p>
+                </div>
+
+
+                <div style="float:right">
+                    <table class="e3" cellspacing="0px">
+                        <tr>
+                            <td class="d1">编号：</td>
+                            <td class="d1" width="60" contenteditable="true"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+            <script>
+                setInterval("cg.innerHTML=new Date().toLocaleString()", 1000);
+            </script>
+
+
+            <table class="e1">
+
+                <tr>
+                    <td height="25%" width="25%">学员姓名</td>
+                    <td width="25%" contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td height="25%" width="25%">学员电话</td>
+                    <td width="25%" contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td height="25%">金额</td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td height="25%">备注</td>
+                    <td contenteditable="true"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="v3">
+            <!-- 第  联  存根 -->
+            第&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联&nbsp;&nbsp;&nbsp;&nbsp;存根
+        </div>
+
+    </div>
+
+    <!--endprint-->
+    <br />
+    <input type="button" onClick="doPrint()" value="打印">
+    </br></br>
+    <a href="/baoming.html"><input name="报名" type="button" id="n1" title="报名" value="报名" /></a>
+    <a href="/keer.html"><input name="科二" type="button" id="n1" title="科二" value="科二" /></a>
+    <a href="/kesan.html"><input name="科三" type="button" id="n2" title="科三" value="科三" /></a>
+</body>
+
+</html>
